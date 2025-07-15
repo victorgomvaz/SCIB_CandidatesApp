@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="submit()" style="display: flex; flex-direction: column; gap: 1rem;">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Surname</mat-label>
+    <input matInput formControlName="surname">
+  </mat-form-field>
+
+  <input type="file" (change)="onFileChange($event)" accept=".xlsx,.xls" required />
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || !file">
+    Submit
+  </button>
+</form>

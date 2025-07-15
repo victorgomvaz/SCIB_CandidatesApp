@@ -1,0 +1,23 @@
+table {
+  width: 90%;
+  margin: 2rem auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mat-header-row, .mat-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-header-cell, .mat-cell {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
