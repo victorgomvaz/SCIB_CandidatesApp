@@ -8,6 +8,13 @@ export class CandidateService {
   private readonly http = inject(HttpClient);
   private readonly apiUrl = 'http://localhost:3000/candidates';
 
+  constructor() {
+    const stored = localStorage.getItem('candidates');
+    if (stored) {
+      this.candidates$.next(JSON.parse(stored));
+    }
+  }
+
   private candidates$ = new BehaviorSubject<Candidate[]>(
     this.loadFromStorage()
   );
